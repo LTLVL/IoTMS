@@ -3,10 +3,10 @@ package com.zju.controller;
 import com.zju.common.R;
 import com.zju.pojo.Equipment;
 import com.zju.service.EquipmentService;
+import com.zju.util.JWTUtils;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -16,12 +16,20 @@ public class EquipmentController {
     @Autowired
     private EquipmentService equipmentService;
 
-    @GetMapping
-    public R<List<Equipment>> list(){
-        return R.success(equipmentService.list());
+    @GetMapping("{name}")
+    public R<List<Equipment>> listAll(@PathVariable String name){
+        return equipmentService.listAll(name);
     }
 
+    @PostMapping()
+    public R<List<Equipment>> saveEquip(HttpServletRequest request, @RequestBody Equipment equipment){
+        return equipmentService.saveEquip(request, equipment);
+    }
 
+    @PutMapping()
+    public R<String> updateEquip(@RequestBody Equipment equipment){
+        return equipmentService.updateEquip(equipment);
+    }
 
 
 }

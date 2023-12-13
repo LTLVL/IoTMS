@@ -4,10 +4,9 @@ import com.zju.common.R;
 import com.zju.pojo.User;
 import com.zju.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Map;
 
 @RestController
 @RequestMapping("/user")
@@ -16,7 +15,12 @@ public class UserController {
     private UserService userService;
 
     @PostMapping("/login")
-    public R login(@RequestParam User user){
+    public R<Map<String,Object>> login(@RequestBody User user){
+        return userService.login(user.getName(), user.getPassword());
+    }
 
+    @PostMapping("/register")
+    public R<String> register(@RequestBody User user){
+        return userService.register(user);
     }
 }
