@@ -5,9 +5,9 @@
                     <sidebar class="sidebar-container"></sidebar>
             </el-aside>
             <el-container class="main">
-                <el-header class="heads" height='50px' :style="themeColor[themeIndex].header">
-                    <Headers :asideShow.sync="asideShow" @targetIcon='targetIcon' :themeColor='themeColor' :themeIndex='themeIndex' @targetThemeIndex='targetThemeIndex'></Headers>
-                </el-header>
+<!--                <el-header class="heads" height='50px' :style="themeColor[themeIndex].header">-->
+<!--                    <Headers :asideShow.sync="asideShow" @targetIcon='targetIcon' :themeColor='themeColor' :themeIndex='themeIndex' @targetThemeIndex='targetThemeIndex'></Headers>-->
+<!--                </el-header>-->
                 <el-main class="main-container">
                     <TagsViews />
                     <div class="main-container-views" :style="themeColor[themeIndex].container">

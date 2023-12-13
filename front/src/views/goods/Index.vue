@@ -4,11 +4,11 @@
         <el-row :gutter="20" class="goodsindex-queryInfo">
             <!-- 商品名称搜索 -->
             <el-col :xs="8" :sm="6" :md="6" :lg="4" :xl="4">
-                <el-input class="goodsindex-queryInfo-li" v-model="queryInfo.name" clearable size="small" placeholder="请输入产品名称"></el-input>
+                <el-input class="goodsindex-queryInfo-li" v-model="queryInfo.name" clearable size="small" placeholder="请输入设备名称"></el-input>
             </el-col>
             <!-- 商品分类搜索 -->
             <el-col :xs="8" :sm="6" :md="6" :lg="4" :xl="4">
-                 <el-select  class="goodsindex-queryInfo-li" v-model="queryInfo.type" size="small" clearable placeholder="请选择产品分类">
+                 <el-select  class="goodsindex-queryInfo-li" v-model="queryInfo.type" size="small" clearable placeholder="请输入设备描述">
                     <el-option
                     v-for="item in options"
                     :key="item.value"
@@ -37,33 +37,23 @@
                     </el-table-column>
                     <el-table-column
                     prop="date"
-                    label="产品名称"
+                    label="设备名称"
                     width="180">
                     </el-table-column>
                     <el-table-column
-                    prop="name"
-                    label="产品图片"
-                    width="120">
+                        prop="date"
+                        label="设备类型"
+                        width="180">
                     </el-table-column>
                     <el-table-column
-                    prop="name"
-                    label="原件"
-                    width="80">
+                        prop="date"
+                        label="设备状态"
+                        width="180">
                     </el-table-column>
                     <el-table-column
-                    prop="name"
-                    label="现价"
-                    width="80">
-                    </el-table-column>
-                    <el-table-column
-                    prop="name"
-                    label="总量"
-                    width="80">
-                    </el-table-column>
-                    <el-table-column
-                    prop="name"
-                    label="库存"
-                    width="80">
+                        prop="date"
+                        label="设备简介"
+                        width="180">
                     </el-table-column>
                     <el-table-column
                     prop="name"
@@ -73,16 +63,6 @@
                     <el-table-column
                     prop="name"
                     label="创建时间"
-                    width="180">
-                    </el-table-column>
-                    <el-table-column
-                    prop="name"
-                    label="修该者"
-                    width="140">
-                    </el-table-column>
-                    <el-table-column
-                    prop="name"
-                    label="最后修改时间"
                     width="180">
                     </el-table-column>
                     <el-table-column
